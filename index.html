@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YAMAHA Bass</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Microsoft YaHei', sans-serif;
+      background-color: #f4f4f4;
+      /* 给页面一个浅灰色背景 */
+    }
+
+    .main-title {
+      text-align: center;
+      padding: 40px 0;
+      font-size: 2em;
+    }
+
+    /* 每个产品系列的容器 */
+    .product-section {
+      background-color: white;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 50px auto;
+      /* 居中显示，并和下一个系列有50px的下边距 */
+      padding-bottom: 30px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      /* 添加一点阴影效果 */
+    }
+
+    .product-image {
+      width: 100%;
+      /* 图片宽度撑满容器 */
+      height: auto;
+      /* 高度自适应 */
+      border-top-left-radius: 8px;
+      /* 给图片也加上圆角 */
+      border-top-right-radius: 8px;
+    }
+
+    .nav-button {
+      padding: 12px 40px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+      /* 按钮和图片之间的间距 */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      text-decoration: none;
+      /* 如果用a标签，移除下划线 */
+      color: black;
+      /* 按钮文字颜色 */
+      display: inline-block;
+    }
+
+    .nav-button:hover {
+      background-color: #e0e0e0;
+      /* 鼠标悬停效果 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 class="main-title">YAMAHA ELECTRIC BASS</h1>
+
+  <!-- 第一个产品：BB系列 -->
+  <div class="product-section">
+    <img class="product-image" src='https://www.yamaha.com.cn/uploads/image/20170412/0676ab2ef50c.jpg'
+      alt="YAMAHA BB Series">
+
+    <!-- 使用 a 标签作为按钮，以便跳转 -->
+    <a href="bb-series.html" class="nav-button">BB系列</a>
+  </div>
+
+  <!-- 第二个产品：TRBX系列 -->
+  <div class="product-section">
+    <!-- ！！！注意：请把下面的 trbx_bass.jpg 换成你自己的本地图片文件名 ！！！ -->
+    <img class="product-image" src='1.jpg' alt="YAMAHA TRBX Series">
+
+    <a href="trbx-series.html" class="nav-button">TRBX系列</a>
+  </div>
+
+</body>
+
+</html>

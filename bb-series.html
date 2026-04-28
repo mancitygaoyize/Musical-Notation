@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>YAMAHA - BB系列</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .back-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .page-title {
+            margin-top: 40px;
+        }
+
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: 30px auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        .fade {
+            animation: fade 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dot-container {
+            text-align: center;
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 13px;
+            width: 13px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .button-row-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .product-button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            flex-grow: 1;
+            max-width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="page-title">BB系列 Electric Bass</h1>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade"><img src="https://www.yamaha.com.cn/uploads/image/20210316/cf9e149ae41f.png"></div>
+        <div class="mySlides fade"><img src="https://www.yamaha.com.cn/uploads/image/20210316/c329e5d1a6a9.png"></div>
+        <div class="mySlides fade"><img src="https://www.yamaha.com.cn/uploads/image/20210316/705d21b69ef5.png"></div>
+        <div class="mySlides fade"><img src="https://www.yamaha.com.cn/uploads/image/20210316/995292de1994.png"></div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="dot-container"><span class="dot" onclick="currentSlide(1)"></span><span class="dot"
+                onclick="currentSlide(2)"></span><span class="dot" onclick="currentSlide(3)"></span><span class="dot"
+                onclick="currentSlide(4)"></span></div>
+    </div>
+
+    <!-- 所有按钮的链接都已更新 -->
+    <div class="button-row-container">
+        <a href="https://www.yamaha.com.cn/products/musical-instruments/guitars/electricgbass/new-bb-series/BB_pro"
+            target="_blank" class="product-button">BBPro</a>
+        <a href="https://www.yamaha.com.cn/products/musical-instruments/guitars/electricgbass/new-bb-series/BB_700"
+            target="_blank" class="product-button">BB700</a>
+        <a href="https://www.yamaha.com.cn/products/musical-instruments/guitars/electricgbass/new-bb-series/BB_400"
+            target="_blank" class="product-button">BB400</a>
+        <a href="https://www.yamaha.com.cn/products/musical-instruments/guitars/electricgbass/new-bb-series/BB_200"
+            target="_blank" class="product-button">BB200</a>
+    </div>
+
+    <a href="index.html" class="back-button">返回主页</a>
+
+    <script>
+        let slideIndex = 1; let slideInterval;
+        document.addEventListener("DOMContentLoaded", function () { showSlides(slideIndex); startSlideShow(); });
+        document.querySelector('.slideshow-container').addEventListener('mouseenter', stopSlideShow);
+        document.querySelector('.slideshow-container').addEventListener('mouseleave', startSlideShow);
+        function startSlideShow() { stopSlideShow(); slideInterval = setInterval(() => { plusSlides(1); }, 5000); }
+        function stopSlideShow() { clearInterval(slideInterval); }
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        function currentSlide(n) { showSlides(slideIndex = n); }
+        function showSlides(n) {
+            let i, slides = document.getElementsByClassName("mySlides"), dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+
+</html>
